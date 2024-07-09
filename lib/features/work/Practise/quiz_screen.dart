@@ -55,7 +55,7 @@ class _QuizScreenState extends State<QuizScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.indigo,
+              Colors.blue,
               Colors.purple,
             ],
           ),
@@ -85,7 +85,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -107,6 +107,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
+                        color:Colors.black,
                       ),
                     ),
                     SizedBox(height: 20),
@@ -140,7 +141,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: selectedAnswers[currentQuestionIndex] == index
-                                    ? Colors.white
+                                    ? Colors.black
                                     : Colors.black,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,

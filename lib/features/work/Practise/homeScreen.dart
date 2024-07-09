@@ -33,7 +33,7 @@ class HomeQuizScreen extends StatelessWidget {
                   style:TextStyle(
                     fontSize:25,
                     fontWeight: FontWeight.w500,
-                    color:Colors.white,
+                    color:Colors.black,
                   ),
                 ),
               ),
