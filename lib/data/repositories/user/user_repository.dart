@@ -31,8 +31,6 @@ class UserRepository extends GetxController {
     } catch (e) {
       throw e.toString();
     }
-
-
   }
 
   /// Function to fetch user details based on user ID.

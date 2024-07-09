@@ -6,7 +6,8 @@ import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import 'features/personalization/screens/settings/settings.dart';
-import 'features/work/Practise/practise.dart';
+//import 'features/work/Practise/practise.dart';
+import 'features/work/Practise/homeScreen.dart';
 import 'features/work/screens/home/home.dart';
 
 
@@ -50,7 +51,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     Container(color: Colors.blue,),
-    PractiseScreen(),
+    HomeQuizScreen(),
     const SettingsScreen()
   ];
 }
