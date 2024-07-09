@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         /// Scrollable categories
 
-             Text('Welcome to QuickPrep   ', style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.white),maxLines:1,overflow: TextOverflow.ellipsis,),
+             Text('Welcome to QuickPrepee   ', style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.white),maxLines:1,overflow: TextOverflow.ellipsis,),
 
                         const SizedBox(height: TSizes.spaceBtwSections * 2),
                       ],
