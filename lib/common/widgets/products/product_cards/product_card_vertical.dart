@@ -85,3 +85,5 @@ class ProductCardVertical extends StatelessWidget {
     );
   }
 }
+
+
