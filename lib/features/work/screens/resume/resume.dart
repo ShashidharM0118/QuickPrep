@@ -1,167 +1,108 @@
-import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pdfLib;
-import 'package:path_provider/path_provider.dart';
-import 'package:printing/printing.dart';
+import 'package:t_store/features/work/screens/resume/screens/build_options_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/achievement_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/carrier_objective_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/contact_info_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/declaration_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/education_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/experience_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/interest_hobbies_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/personal_details_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/projects_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/reference_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/options/technical_skills_page.dart';
+import 'package:t_store/features/work/screens/resume/screens/pdf_page.dart';
 
-class ResumeScreen extends StatefulWidget {
-  @override
-  _ResumeScreenState createState() => _ResumeScreenState();
-}
-
-class _ResumeScreenState extends State<ResumeScreen> {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneNumberController = TextEditingController();
-  final TextEditingController addressController = TextEditingController();
-  final TextEditingController educationController = TextEditingController();
-  final TextEditingController skillsController = TextEditingController();
-  final TextEditingController projectsController = TextEditingController();
-  final TextEditingController achievementsController = TextEditingController();
-  final TextEditingController codingProfilesController = TextEditingController();
-
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  File? _imageFile;
-
-  Future<void> _pickImage() async {
-    final pickedFile = await ImagePicker().getImage(source: ImageSource.gallery);
-    setState(() {
-      if (pickedFile != null) {
-        _imageFile = File(pickedFile.path);
-      }
-    });
-  }
+class ResumeScreen extends StatelessWidget {
+  const ResumeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        "/": (context) => const HomePage(),
+        "build_option_page": (context) => const Build_Options_Page(),
+        "contact_info_page": (context) => const contact_info_page(),
+        "carrier_objective_page": (context) => const carrier_objective_page(),
+        "personal_details_page": (context) => const personal_details_page(),
+        "education_page": (context) => const education_page(),
+        "experience_page": (context) => const experience_page(),
+        "technical_skills_page": (context) => const technical_skills_page(),
+        "interest_hobbies_page": (context) => const interest_hobbies_page(),
+        "projects_page": (context) => const projects_page(),
+        "achievement_page": (context) => const achievement_page(),
+        "reference_page": (context) => const reference_page(),
+        "declaration_page": (context) => const declaration_page(),
+        "pdf_page": (context) => PDF_Page(),
+      },
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    Color MyColor = const Color(0xff0475FF);
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resume'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.download),
-            onPressed: () {
-              if (_formKey.currentState?.validate() ?? false) {
-                _generatePdfAndView(context);
-              }
-            },
+        backgroundColor: MyColor,
+        title: const Text("Resume Builder"),
+        centerTitle: true,
+        elevation: 0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("build_option_page");
+        },
+        backgroundColor: MyColor,
+        child: const Icon(
+          Icons.add,
+          size: 30,
+        ),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: _width,
+              alignment: const Alignment(0, 0.5),
+              color: MyColor,
+              child: const Text(
+                "RESUME",
+                style: TextStyle(color: Colors.white, fontSize: 21),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 18,
+            child: Column(
+              children: [
+                SizedBox(height: _height * 0.07),
+                Image.asset(
+                  "assets/icons/open-cardboard-box.png",
+                  height: _height * 0.07,
+                ),
+                SizedBox(height: _height * 0.03),
+                const Text(
+                  "No Resumes + Create new Resume",
+                  style: TextStyle(fontSize: 21, color: Colors.grey),
+                )
+              ],
+            ),
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildTextField(nameController, 'Name'),
-              _buildTextField(emailController, 'Email'),
-              _buildTextField(phoneNumberController, 'Phone Number'),
-              _buildTextField(addressController, 'Address'),
-              _buildTextField(educationController, 'Education'),
-              _buildTextField(skillsController, 'Skills'),
-              _buildTextField(projectsController, 'Projects'),
-              _buildTextField(achievementsController, 'Achievements'),
-              _buildTextField(codingProfilesController, 'Coding Profiles'),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _pickImage,
-                child: Text('Select Image'),
-              ),
-              if (_imageFile != null)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Image.file(_imageFile!, height: 100),
-                ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTextField(TextEditingController controller, String label) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: TextFormField(
-        controller: controller,
-        decoration: InputDecoration(labelText: label),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Please enter $label';
-          }
-          return null;
-        },
-      ),
-    );
-  }
-
-  Future<void> _generatePdfAndView(BuildContext context) async {
-    final pdf = pdfLib.Document();
-    pdfLib.MemoryImage? imageProvider;
-
-    if (_imageFile != null) {
-      final imageBytes = await _imageFile!.readAsBytes();
-      imageProvider = pdfLib.MemoryImage(imageBytes);
-    }
-
-    pdf.addPage(
-      pdfLib.Page(
-        build: (context) {
-          return pdfLib.Column(
-            crossAxisAlignment: pdfLib.CrossAxisAlignment.start,
-            children: <pdfLib.Widget>[
-              if (imageProvider != null)
-                pdfLib.Container(
-                  alignment: pdfLib.Alignment.topRight,
-                  child: pdfLib.Image(imageProvider, width: 100, height: 100),
-                ),
-              pdfLib.SizedBox(height: 10),
-              pdfLib.Header(
-                level: 0,
-                text: nameController.text,
-                textStyle: pdfLib.TextStyle(fontSize: 20, fontWeight: pdfLib.FontWeight.bold),
-              ),
-              pdfLib.Text('Email: ${emailController.text}', style: pdfLib.TextStyle(fontSize: 12)),
-              pdfLib.Text('Phone Number: ${phoneNumberController.text}', style: pdfLib.TextStyle(fontSize: 12)),
-              pdfLib.SizedBox(height: 10),
-              pdfLib.Text('Address', style: pdfLib.TextStyle(fontSize: 18, fontWeight: pdfLib.FontWeight.bold)),
-              pdfLib.Text(addressController.text, style: pdfLib.TextStyle(fontSize: 12)),
-              pdfLib.SizedBox(height: 10),
-              pdfLib.Text('Education', style: pdfLib.TextStyle(fontSize: 18, fontWeight: pdfLib.FontWeight.bold)),
-              pdfLib.Text(educationController.text, style: pdfLib.TextStyle(fontSize: 12)),
-              pdfLib.SizedBox(height: 10),
-              pdfLib.Text('Skills', style: pdfLib.TextStyle(fontSize: 18, fontWeight: pdfLib.FontWeight.bold)),
-              pdfLib.Text(skillsController.text, style: pdfLib.TextStyle(fontSize: 12)),
-              pdfLib.SizedBox(height: 10),
-              pdfLib.Text('Projects', style: pdfLib.TextStyle(fontSize: 18, fontWeight: pdfLib.FontWeight.bold)),
-              pdfLib.Text(projectsController.text, style: pdfLib.TextStyle(fontSize: 12)),
-              pdfLib.SizedBox(height: 10),
-              pdfLib.Text('Achievements', style: pdfLib.TextStyle(fontSize: 18, fontWeight: pdfLib.FontWeight.bold)),
-              pdfLib.Text(achievementsController.text, style: pdfLib.TextStyle(fontSize: 12)),
-              pdfLib.SizedBox(height: 10),
-              pdfLib.Text('Coding Profiles', style: pdfLib.TextStyle(fontSize: 18, fontWeight: pdfLib.FontWeight.bold)),
-              pdfLib.Text(codingProfilesController.text, style: pdfLib.TextStyle(fontSize: 12)),
-            ],
-          );
-        },
-      ),
-    );
-
-    final bytes = await pdf.save();
-    final directory = await getApplicationDocumentsDirectory();
-    final file = File('${directory.path}/resume.pdf');
-    await file.writeAsBytes(bytes);
-
-    await Printing.sharePdf(bytes: bytes, filename: 'resume.pdf');
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('PDF saved successfully')),
     );
   }
 }
