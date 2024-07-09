@@ -56,7 +56,7 @@ class _QuizScreenState extends State<QuizScreen> {
             end: Alignment.bottomCenter,
             colors: [
               Colors.blue,
-              Colors.purple,
+              Colors.blue,
             ],
           ),
         ),
@@ -125,12 +125,12 @@ class _QuizScreenState extends State<QuizScreen> {
                           margin: EdgeInsets.symmetric(vertical: 8),
                           decoration: BoxDecoration(
                             color: selectedAnswers[currentQuestionIndex] == index
-                                ? Colors.indigo
+                                ? Colors.blue
                                 : Colors.white,
                             border: Border.all(
                               width: 2,
                               color: selectedAnswers[currentQuestionIndex] == index
-                                  ? Colors.indigo
+                                  ? Colors.blue
                                   : Colors.grey,
                             ),
                             borderRadius: BorderRadius.circular(25),
