@@ -11,9 +11,10 @@ import '../../../../common/widgets/text/section_heading.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../personalization/controllers/user_controller.dart';
+import '../intrestingfact/faq_page.dart';
 import '../mostfrequent/faq_page.dart';
+// Import the MIPage class
 import 'widgets/home_appbar.dart';
- // Make sure to import the FAQPage class
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -90,16 +91,22 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(TSizes.defaultSpace),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Interesting Facts', style: Theme.of(context).textTheme.headlineMedium),
-                          const SizedBox(height: TSizes.spaceBtwItems),
-                          Text('Discover some interesting facts that you might not know.'),
-                        ],
+                  GestureDetector(
+                    onTap: () {
+                      // Navigate to MIPage
+                      Get.to(() => MIPage());
+                    },
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(TSizes.defaultSpace),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Interesting Facts', style: Theme.of(context).textTheme.headlineMedium),
+                            const SizedBox(height: TSizes.spaceBtwItems),
+                            Text('Discover some interesting facts that you might not know.'),
+                          ],
+                        ),
                       ),
                     ),
                   ),
