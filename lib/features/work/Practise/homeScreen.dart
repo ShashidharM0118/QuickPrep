@@ -16,8 +16,8 @@ class HomeQuizScreen extends StatelessWidget {
               begin: Alignment.topCenter,
               end:Alignment.bottomCenter,
               colors: [
-                Colors.indigo,
-                Colors.purple,
+                Colors.blue,
+                Colors.blue,
               ],
             )
         ),

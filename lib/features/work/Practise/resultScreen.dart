@@ -37,8 +37,8 @@ class ResultScreen extends StatelessWidget {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [
-    Colors.indigo,
-    Colors.purple,
+    Colors.blue,
+    Colors.blue,
     ],
     ),
     ),
@@ -133,8 +133,8 @@ class ResultScreen extends StatelessWidget {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [
-    Colors.indigo,
-    Colors.purple,
+    Colors.blue,
+    Colors.blue,
     ],
     ),
     ),
@@ -165,8 +165,8 @@ class ResultScreen extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.indigo,
-                Colors.purple,
+                Colors.blue,
+                Colors.blue,
               ],
             ),
           ),
