@@ -11,7 +11,9 @@ import '../../../../common/widgets/text/section_heading.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../personalization/controllers/user_controller.dart';
+import '../mostfrequent/faq_page.dart';
 import 'widgets/home_appbar.dart';
+ // Make sure to import the FAQPage class
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,15 +40,14 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Obx(() {
-                          return Text('Hello ${controller.user.value.firstName ?? ''} , 👋', style: Theme.of(context).textTheme.headlineLarge!.apply(color: Colors.white),maxLines:1,overflow: TextOverflow.ellipsis,);
+                          return Text('Hello ${controller.user.value.firstName ?? ''} , 👋', style: Theme.of(context).textTheme.headlineLarge!.apply(color: Colors.white), maxLines: 1, overflow: TextOverflow.ellipsis);
                         }),
 
                         const SizedBox(
                           height: TSizes.spaceBtwItems,
                         ),
                         /// Scrollable categories
-
-             Text('Welcome to QuickPrep  ', style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.white),maxLines:1,overflow: TextOverflow.ellipsis,),
+                        Text('Welcome to QuickPrep', style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.white), maxLines: 1, overflow: TextOverflow.ellipsis),
 
                         const SizedBox(height: TSizes.spaceBtwSections * 2),
                       ],
@@ -64,14 +65,43 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
                   /// Heading
                   TSectionHeading(
-                    title: 'Explore ',
+                    title: 'Explore',
                     onPressed: () {},
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  /// Grid
-                  TGridLayout(
-                    itemCount: 4,
-                    itemBuilder: (_, index) => const ProductCardVertical(),
+                  /// Custom Cards
+                  GestureDetector(
+                    onTap: () {
+                      // Navigate to FAQPage
+                      Get.to(() => FAQPage());
+                    },
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(TSizes.defaultSpace),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Most Frequent Questions', style: Theme.of(context).textTheme.headlineMedium),
+                            const SizedBox(height: TSizes.spaceBtwItems),
+                            Text('Find answers to the most frequently asked questions.'),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(TSizes.defaultSpace),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Interesting Facts', style: Theme.of(context).textTheme.headlineMedium),
+                          const SizedBox(height: TSizes.spaceBtwItems),
+                          Text('Discover some interesting facts that you might not know.'),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -82,3 +112,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
