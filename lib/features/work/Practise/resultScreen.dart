@@ -66,7 +66,7 @@ class ResultScreen extends StatelessWidget {
     style: TextStyle(
     fontSize: 25,
     fontWeight: FontWeight.w500,
-    color: Colors.white,
+    color: Colors.black,
     ),
     ),
     ],
@@ -85,9 +85,12 @@ class ResultScreen extends StatelessWidget {
     children: [
     Text(
     feedback,
+
     style: TextStyle(
+      color: Colors.black,
     fontWeight: FontWeight.w600,
     fontSize: 25,
+
     ),
     ),
     SizedBox(height: 20),
@@ -100,10 +103,13 @@ class ResultScreen extends StatelessWidget {
     ),
     SizedBox(height: 10),
     Text(
+
     "${totalScore}/${totalQuestions * 10}",
     style: TextStyle(
+      color: Colors.black,
     fontSize: 25,
     fontWeight: FontWeight.w500,
+
     ),
     ),
     SizedBox(height: 50),
@@ -135,7 +141,7 @@ class ResultScreen extends StatelessWidget {
     child: Text(
     "Repeat",
     style: TextStyle(
-    color: Colors.white,
+    color: Colors.black,
       fontSize: 18,
     ),
     ),
@@ -167,7 +173,7 @@ class ResultScreen extends StatelessWidget {
           child: Text(
             "Home",
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 18,
             ),
           ),
