@@ -5,44 +5,44 @@ import 'faq_item.dart';
 class MIPage extends StatelessWidget {
   final List<FAQ> faqs = [
     FAQ(
-      question: 'What do you know about our company?',
-      answer: 'I have researched your companys history, products/services, recent news, and company culture. I am particularly impressed by [mention specific aspects].',
+      question: 'Average Duration',
+      answer: 'The average job interview lasts about 40 minutes',
     ),
     FAQ(
-      question: 'Can you tell me about yourself?',
-      answer: 'I have [mention experience or background]. I am passionate about [mention relevant skills or interests].',
+      question: 'Interview Rounds',
+      answer: 'On average, candidates go through 2-3 rounds of interviews before receiving a job offer',
     ),
     FAQ(
-      question: 'How do you usually dress for work?',
-      answer: "I believe in dressing professionally. For this interview, I've chosen [describe your attire].",
+      question: 'Common First Question',
+      answer: '"Tell me about yourself" is the most commonly asked interview question, appearing in 60% of job interviews"',
     ),
     FAQ(
-      question: 'How do you manage your time?',
-      answer: "I prioritize punctuality and plan to arrive early to ensure I'm prepared and relaxed before the interview.",
+      question: 'Interview Success Rate',
+      answer: "Only about 20% of candidates who apply for a job are invited for an interview, and out of those, only 1 in 6 candidates get the job",
     ),
     FAQ(
-      question: 'Do you have any questions for us?',
-      answer: "Yes, I'm interested in [ask about company culture, team dynamics, growth opportunities].",
+      question: 'Resume Screening',
+      answer: "Recruiters spend an average of 6 seconds reviewing a resume before deciding if a candidate should be considered for an interview",
     ),
     FAQ(
-      question: 'Why do you want to work here?',
-      answer: "I'm excited about [mention specific reasons, such as company mission, products, or industry reputation].",
+      question: 'Video Interviews',
+      answer: "Since the COVID-19 pandemic, the use of video interviews has increased dramatically, with over 86% of companies now using them as part of their hiring process",
     ),
     FAQ(
-      question: 'Tell me about a time when you solved a problem at work.',
-      answer: "In my previous role at [company], I [describe the situation, action taken, and result achieved].",
+      question: 'Common Mistakes',
+      answer: "The most common interview mistake is not knowing enough about the company, with 47% of interviewers citing it as a reason for rejecting a candidate",
     ),
     FAQ(
-      question: 'How do you ensure you understand instructions?',
-      answer: "I actively listen, ask clarifying questions if needed, and summarize to ensure I understand correctly.",
+      question: 'Follow-Up',
+      answer: "Only 24% of job seekers send a thank-you note after an interview, despite it being a recommended practice",
     ),
     FAQ(
-      question: 'How do you handle stressful situations?',
-      answer: "I maintain composure by [mention techniques like deep breathing, prioritizing tasks, or seeking support].",
+      question: 'Job Offers',
+      answer: "About 42% of job offers are extended within two weeks of the initial interview",
     ),
     FAQ(
-      question: 'How do you follow up after an interview?',
-      answer: "I plan to send a thank-you email expressing my appreciation for the opportunity and reiterating my interest.",
+      question: 'Social Media Screening',
+      answer: "Around 70% of employers check a candidate's social media profiles during the hiring process, and 54% have found content that caused them not to hire a candidate",
     ),
   ];
 
