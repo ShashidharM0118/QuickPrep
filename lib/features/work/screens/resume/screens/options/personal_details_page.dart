@@ -195,7 +195,7 @@ class _personal_details_pageState extends State<personal_details_page> {
                             print("${Global.gujratiCheckBox}");
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Save"),
                         ),
@@ -212,7 +212,7 @@ class _personal_details_pageState extends State<personal_details_page> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Clear"),
                         ),

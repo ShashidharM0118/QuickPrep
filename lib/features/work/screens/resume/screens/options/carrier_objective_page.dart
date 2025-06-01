@@ -153,7 +153,7 @@ class _carrier_objective_pageState extends State<carrier_objective_page> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Save"),
                         ),
@@ -169,7 +169,7 @@ class _carrier_objective_pageState extends State<carrier_objective_page> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Clear"),
                         ),

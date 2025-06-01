@@ -224,7 +224,7 @@ class _projects_pageState extends State<projects_page> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Save"),
                         ),
@@ -247,7 +247,7 @@ class _projects_pageState extends State<projects_page> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Clear"),
                         ),

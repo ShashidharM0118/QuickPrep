@@ -167,7 +167,7 @@ class _education_pageState extends State<education_page> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Save"),
                         ),
@@ -187,7 +187,7 @@ class _education_pageState extends State<education_page> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Clear"),
                         ),

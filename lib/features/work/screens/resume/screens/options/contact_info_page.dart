@@ -343,7 +343,7 @@ class _contact_info_pageState extends State<contact_info_page> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: MyColor,
+                                backgroundColor: MyColor,
                               ),
                               child: const Text("Save"),
                             ),
@@ -367,7 +367,7 @@ class _contact_info_pageState extends State<contact_info_page> {
                                   });
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: MyColor,
+                                  backgroundColor: MyColor,
                                 ),
                                 child: const Text("Clear")),
                           ],
@@ -420,7 +420,7 @@ class _contact_info_pageState extends State<contact_info_page> {
                                       });
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      primary: MyColor,
+                                      backgroundColor: MyColor,
                                     ),
                                     child: const Text("gallery"),
                                   ),
@@ -435,7 +435,7 @@ class _contact_info_pageState extends State<contact_info_page> {
                                       });
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      primary: MyColor,
+                                      backgroundColor: MyColor,
                                     ),
                                     child: const Text("Camera"),
                                   ),
@@ -445,7 +445,7 @@ class _contact_info_pageState extends State<contact_info_page> {
                           },
                           style: ElevatedButton.styleFrom(
                             shape: const CircleBorder(),
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Icon(Icons.add),
                         )

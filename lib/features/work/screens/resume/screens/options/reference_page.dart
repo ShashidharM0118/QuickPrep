@@ -141,7 +141,7 @@ class _reference_pageState extends State<reference_page> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Save"),
                         ),
@@ -159,7 +159,7 @@ class _reference_pageState extends State<reference_page> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Clear"),
                         ),

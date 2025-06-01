@@ -103,7 +103,7 @@ class _technical_skills_pageState extends State<technical_skills_page> {
                           print(Global.technicalSkills);
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: MyColor,
+                          backgroundColor: MyColor,
                         ),
                         child: const Text("Save"),
                       ),

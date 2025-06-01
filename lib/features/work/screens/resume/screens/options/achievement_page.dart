@@ -102,7 +102,7 @@ class _achievement_pageState extends State<achievement_page> {
                             print(Global.achievement);
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: MyColor,
+                            backgroundColor: MyColor,
                           ),
                           child: const Text("Save"),
                         ),

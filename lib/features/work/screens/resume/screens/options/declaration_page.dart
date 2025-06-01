@@ -271,7 +271,7 @@ class _declaration_pageState extends State<declaration_page> {
                                   print(Global.achievement);
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: MyColor,
+                                  backgroundColor: MyColor,
                                 ),
                                 child: const Text("Save"),
                               ),
@@ -289,7 +289,7 @@ class _declaration_pageState extends State<declaration_page> {
                                   });
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: MyColor,
+                                  backgroundColor: MyColor,
                                 ),
                                 child: const Text("Clear"),
                               ),

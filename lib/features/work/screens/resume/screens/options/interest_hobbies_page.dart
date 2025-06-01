@@ -102,7 +102,7 @@ class _interest_hobbies_pageState extends State<interest_hobbies_page> {
                           print(Global.interestHobbies);
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: MyColor,
+                          backgroundColor: MyColor,
                         ),
                         child: const Text("Save"),
                       ),
